@@ -7,7 +7,7 @@ public final class SDUCS extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
-
+        // test push
     }
 
     @Override
