@@ -10,3 +10,5 @@ Base on Minecraft Spigot API 1.13
 如“芝士雪豹”：[Team.秦始皇] ATRI >> 芝士雪豹
 #### All: “@”起手
 如“@雪豹闭嘴”：[All] ATRI >> 雪豹闭嘴
+
+### 三、禁用命令“/msg”私聊
