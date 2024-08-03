@@ -1,6 +1,8 @@
 # SDUCS Plugin
 Base on Minecraft Spigot API 1.13
 
+## 功能
+
 ### 一、旁观模式不可发言（死人闭嘴）
 
 ### 二、使用Scoreboard.Team区分的队伍与全局发言
