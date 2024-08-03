@@ -3,3 +3,6 @@ version: '${project.version}'
 main: top.sducraft.sducs.SDUCS
 api-version: '1.13'
 load: STARTUP
+commands:
+  msg:
+    description: 不能说悄悄话了哦~
