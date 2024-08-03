@@ -2,6 +2,7 @@ package top.sducraft.sducs.EVENTs;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -15,6 +16,10 @@ public class AsyncPlayerChat implements Listener {
         Player player = e.getPlayer();
         String message = e.getMessage();
         e.setCancelled(true);
+
+        if (player.getGameMode().equals(GameMode.SPECTATOR)){
+            player.sendMessage(ChatColor.RED+"[Server] 嘘！");
+        }
 
         String msg=ChatColor.AQUA + "[All] "+ChatColor.WHITE + player.getName() + " >> " + message;
 
