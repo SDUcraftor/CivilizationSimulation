@@ -1,0 +1,5 @@
+name: SDUCS
+version: '${project.version}'
+main: top.sducraft.sducs.SDUCS
+api-version: '1.13'
+load: STARTUP
