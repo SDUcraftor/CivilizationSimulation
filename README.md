@@ -12,3 +12,5 @@ Base on Minecraft Spigot API 1.13
 Èç¡°@Ñ©±ª±Õ×ì¡±£º[All] ATRI >> Ñ©±ª±Õ×ì
 
 ### Èı¡¢½ûÓÃÃüÁî¡°/msg¡±Ë½ÁÄ
+
+test
