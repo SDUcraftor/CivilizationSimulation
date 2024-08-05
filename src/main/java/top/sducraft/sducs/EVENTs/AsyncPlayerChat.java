@@ -30,7 +30,7 @@ public class AsyncPlayerChat implements Listener {
                 Location loc =p.getLocation();
                 if (loc.getWorld().equals(player.getWorld())){
                     double d=loc.distance(player.getLocation());
-                    if (d <= 100){
+                    if (d <= 50){
                         p.sendMessage(msg+ String.format("%.1f", d)+") >> " + message);
                     }
                 }
