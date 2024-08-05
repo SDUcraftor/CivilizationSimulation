@@ -12,6 +12,6 @@ public class NoMsg implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Player p=((Player) sender).getPlayer();
         p.sendMessage(ChatColor.RED+"[Server] 不许说悄悄话哦~");
-        return false;
+        return true;
     }
 }

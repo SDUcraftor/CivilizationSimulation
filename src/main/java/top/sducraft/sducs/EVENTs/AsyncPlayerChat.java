@@ -3,6 +3,7 @@ package top.sducraft.sducs.EVENTs;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -19,32 +20,20 @@ public class AsyncPlayerChat implements Listener {
 
         if (player.getGameMode().equals(GameMode.SPECTATOR)){
             player.sendMessage(ChatColor.RED+"[Server] 嘘！");
+            return;
         }
 
-        String msg=ChatColor.AQUA + "[All] "+ChatColor.WHITE + player.getName() + " >> " + message;
-
-        if (message.startsWith("@")){
-            Scoreboard scoreboard = player.getScoreboard();
-            Team team = scoreboard.getEntryTeam(player.getName());
-
-            if (team != null) {
-                msg=ChatColor.GREEN + "[Team:"+team.getName() +"] "+ChatColor.WHITE + player.getName() + " >> " + message;
-
-                for (String entry:team.getEntries()){
-                    Player teamMember = Bukkit.getPlayer(entry);
-                    if (teamMember != null && teamMember.isOnline()) {
-                        teamMember.sendMessage(msg);
-                    }
-                }
-
-                return;
-            }
-        }
-
+        String msg=ChatColor.GREEN + "[Team:"+player.getScoreboard().getEntryTeam(player.getName()).getName() +"] "+ChatColor.WHITE + player.getName()+"(";
 
         for (Player p:player.getServer().getOnlinePlayers()){
             if (p.isOnline()) {
-                p.sendMessage(msg);
+                Location loc =p.getLocation();
+                if (loc.getWorld().equals(player.getWorld())){
+                    double d=loc.distance(player.getLocation());
+                    if (d <= 100){
+                        p.sendMessage(msg+ String.format("%.1f", d)+") >> " + message);
+                    }
+                }
             }
         }
 
